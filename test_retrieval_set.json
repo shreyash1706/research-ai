@@ -1,0 +1,452 @@
+[
+  {
+    "query": "PriorFusion autonomous driving road perception diffusion",
+    "target_id": "2507.23309",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we use diffusion models and shape priors for better road perception in autonomous driving?",
+    "target_id": "2507.23309",
+    "type": "semantic"
+  },
+  {
+    "query": "unifying semantic geometric and generative priors to overcome occlusion and irregular geometry in mapless environment perception",
+    "target_id": "2507.23309",
+    "type": "conceptual"
+  },
+  {
+    "query": "deliberative conceptual inference service robots Golem-III",
+    "target_id": "2012.07121",
+    "type": "keyword"
+  },
+  {
+    "query": "What are the differences between deliberative and conceptual inference cycles when reasoning in service robots?",
+    "target_id": "2012.07121",
+    "type": "semantic"
+  },
+  {
+    "query": "implementing non-monotonic knowledge-based abduction and heuristic search to recover from broken daily life task execution",
+    "target_id": "2012.07121",
+    "type": "conceptual"
+  },
+  {
+    "query": "PromptRec small language models cold-start recommendation",
+    "target_id": "2306.17256",
+    "type": "keyword"
+  },
+  {
+    "query": "Can we use small language models for system cold-start recommendations by framing it as a sentiment analysis task?",
+    "target_id": "2306.17256",
+    "type": "semantic"
+  },
+  {
+    "query": "theoretical framework connecting in-context learning recommendations to language modeling through data-centric prompt pre-training",
+    "target_id": "2306.17256",
+    "type": "conceptual"
+  },
+  {
+    "query": "CodeSLAM dense visual SLAM monocular intensity",
+    "target_id": "1804.00874",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we create a compact and dense geometry representation for monocular SLAM that optimizes efficiently?",
+    "target_id": "1804.00874",
+    "type": "semantic"
+  },
+  {
+    "query": "conditioning depth maps on single image intensity using learned auto-encoder parameters for globally consistent keyframe pose optimization",
+    "target_id": "1804.00874",
+    "type": "conceptual"
+  },
+  {
+    "query": "scale-independent multi-objective reinforcement learning A2C",
+    "target_id": "2302.04179",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we handle conflicting objectives with different scales in reinforcement learning without relying on trial-and-error weight tuning?",
+    "target_id": "2302.04179",
+    "type": "semantic"
+  },
+  {
+    "query": "providing convergence-in-mean guarantees for single-agent advantage actor-critic algorithms optimizing disparate non-scalar reward signals",
+    "target_id": "2302.04179",
+    "type": "conceptual"
+  },
+  {
+    "query": "LibriheavyMix reverberant multi-talker speech separation dataset",
+    "target_id": "2409.00819",
+    "type": "keyword"
+  },
+  {
+    "query": "Is there a large-scale single-channel dataset available for far-field overlapping speech recognition and diarization?",
+    "target_id": "2409.00819",
+    "type": "semantic"
+  },
+  {
+    "query": "decoding speaker identity and timing in cocktail party environments using only single-channel audio without microphone array metadata",
+    "target_id": "2409.00819",
+    "type": "conceptual"
+  },
+  {
+    "query": "language cognitive science general artificial intelligence abstractions",
+    "target_id": "2509.15560",
+    "type": "keyword"
+  },
+  {
+    "query": "Why is language considered crucial for the development of domain-general human-like intelligence in AI systems?",
+    "target_id": "2509.15560",
+    "type": "semantic"
+  },
+  {
+    "query": "reverse engineering culturally evolved abstractions and causal structures through iterated compressed linguistic representations",
+    "target_id": "2509.15560",
+    "type": "conceptual"
+  },
+  {
+    "query": "local Gaussian processes traffic speed prediction static sensors",
+    "target_id": "1708.08079",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we scale Gaussian processes to handle fine-grained traffic speed prediction on large datasets?",
+    "target_id": "1708.08079",
+    "type": "semantic"
+  },
+  {
+    "query": "using non-negative matrix factorization to cluster spatiotemporal variables for real-time localized scalable non-parametric regression",
+    "target_id": "1708.08079",
+    "type": "conceptual"
+  },
+  {
+    "query": "efficient auctions common values multidimensional signal",
+    "target_id": "1805.08568",
+    "type": "keyword"
+  },
+  {
+    "query": "What is the mechanism for designing an efficient auction when buyers have common values and multidimensional information?",
+    "target_id": "1805.08568",
+    "type": "semantic"
+  },
+  {
+    "query": "necessary conditions for maximizing total welfare allocation under non-private valuation functions with multi-dimensional private signals",
+    "target_id": "1805.08568",
+    "type": "conceptual"
+  },
+  {
+    "query": "FlexCAD controllable CAD generation fine-tuned LLMs",
+    "target_id": "2411.05823",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we use fine-tuned large language models to generate controllable computer-aided design models?",
+    "target_id": "2411.05823",
+    "type": "semantic"
+  },
+  {
+    "query": "abstracting geometric construction hierarchies into token sequences for hierarchy-aware masked field prediction in generative design",
+    "target_id": "2411.05823",
+    "type": "conceptual"
+  },
+  {
+    "query": "Dempster-Shafer theory frequentist belief structure tree networks",
+    "target_id": "1707.03881",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we develop a frequentist interpretation of Dempster-Shafer theory to automatically build belief models from real data?",
+    "target_id": "1707.03881",
+    "type": "semantic"
+  },
+  {
+    "query": "bridging the mathematical theory of evidence with empirical frequency data using automatically acquired poly-tree belief network algorithms",
+    "target_id": "1707.03881",
+    "type": "conceptual"
+  },
+  {
+    "query": "CityX procedural content generation 3D cities embodied intelligence",
+    "target_id": "2407.17572",
+    "type": "keyword"
+  },
+  {
+    "query": "What is a good framework for generating diverse and controllable 3D urban scenes for autonomous agent simulation?",
+    "target_id": "2407.17572",
+    "type": "semantic"
+  },
+  {
+    "query": "transforming multi-modal instructions like OpenStreetMap and satellite imagery into executable procedural generation programs via multi-agent protocols",
+    "target_id": "2407.17572",
+    "type": "conceptual"
+  },
+  {
+    "query": "MLE-bench AI research agent ideation diversity",
+    "target_id": "2511.15593",
+    "type": "keyword"
+  },
+  {
+    "query": "What factors make an AI research agent successful and how does ideation diversity impact its overall performance?",
+    "target_id": "2511.15593",
+    "type": "semantic"
+  },
+  {
+    "query": "isolating the causal impact of generation variance and trajectory exploration on scientific discovery in automated machine learning model design",
+    "target_id": "2511.15593",
+    "type": "conceptual"
+  },
+  {
+    "query": "CoVar pseudo-label selection semi-supervised learning variance",
+    "target_id": "2601.11670",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we improve pseudo-label selection in semi-supervised learning beyond just relying on fixed maximum confidence thresholds?",
+    "target_id": "2601.11670",
+    "type": "semantic"
+  },
+  {
+    "query": "framing entropy minimization as a spectral relaxation problem to penalize residual-class variance in overconfident neural network predictions",
+    "target_id": "2601.11670",
+    "type": "conceptual"
+  },
+  {
+    "query": "sim-to-real domain randomization autonomous car racing reinforcement learning",
+    "target_id": "2011.05617",
+    "type": "keyword"
+  },
+  {
+    "query": "How do you prevent lap time degradation when using domain randomization to transfer an autonomous racing model from simulation to the real world?",
+    "target_id": "2011.05617",
+    "type": "semantic"
+  },
+  {
+    "query": "bridging the reality gap via teacher-student distillation where optimal trajectory overfitting is combined with environmental perturbation",
+    "target_id": "2011.05617",
+    "type": "conceptual"
+  },
+  {
+    "query": "bias-aware loss image speech quality prediction MOS",
+    "target_id": "2104.10217",
+    "type": "keyword"
+  },
+  {
+    "query": "How can we correct for dataset-specific bias in Mean Opinion Scores when training subjective quality prediction models?",
+    "target_id": "2104.10217",
+    "type": "semantic"
+  },
+  {
+    "query": "optimizing neural network weights while simultaneously estimating linear subjective experiment alignment functions across disparate multimodal datasets",
+    "target_id": "2104.10217",
+    "type": "conceptual"
+  },
+  {
+    "query": "deep neural networks race sex diversity index Forbes 2000",
+    "target_id": "1707.02353",
+    "type": "keyword"
+  },
+  {
+    "query": "Can deep learning be used to automatically evaluate race and sex diversity in corporate executive management teams?",
+    "target_id": "1707.02353",
+    "type": "semantic"
+  },
+  {
+    "query": "automated quantification of organizational discrimination through visual algorithmic profiling of executive demographics against national population baselines",
+    "target_id": "1707.02353",
+    "type": "conceptual"
+  },
+  {
+    "query": "MLLM prompt engineering adaptive multimodal zero-shot hallucination",
+    "target_id": "2504.10179",
+    "type": "keyword"
+  },
+  {
+    "query": "Which prompt engineering method provides the best performance and lowest hallucination rate for multimodal large language models?",
+    "target_id": "2504.10179",
+    "type": "semantic"
+  },
+  {
+    "query": "evaluating the trade-offs between structured reasoning overhead and factual accuracy across parameter-stratified open-source vision-language models",
+    "target_id": "2504.10179",
+    "type": "conceptual"
+  },
+  {
+    "query": "NetFlow CICFlowMeter machine learning network intrusion detection SHAP",
+    "target_id": "2104.07183",
+    "type": "keyword"
+  },
+  {
+    "query": "Which feature set is more effective for machine learning based network intrusion detection, NetFlow or CICFlowMeter?",
+    "target_id": "2104.07183",
+    "type": "semantic"
+  },
+  {
+    "query": "interpreting the generalisability of cybersecurity classification decisions across synthetic datasets using Shapley Additive exPlanations",
+    "target_id": "2104.07183",
+    "type": "conceptual"
+  },
+  {
+    "query": "Fathom-DeepResearch DeepSearch Qwen3-4B SLMs GRPO",
+    "target_id": "2509.24107",
+    "type": "keyword"
+  },
+  {
+    "query": "How does Fathom-DeepResearch enable small language models to successfully execute long horizon information retrieval tasks?",
+    "target_id": "2509.24107",
+    "type": "semantic"
+  },
+  {
+    "query": "stabilizing multi-turn reinforcement learning with verifiable rewards for open-ended web trajectory search and citation-dense report synthesis",
+    "target_id": "2509.24107",
+    "type": "conceptual"
+  },
+  {
+    "query": "transformer attention mechanism sequence transduction WMT",
+    "target_id": "1706.03762",
+    "type": "keyword"
+  },
+  {
+    "query": "What is the original paper that introduced the Transformer architecture using only attention?",
+    "target_id": "1706.03762",
+    "type": "semantic"
+  },
+  {
+    "query": "eliminating recurrence and convolutions in neural networks through fully parallelizable self-attention mechanisms for translation",
+    "target_id": "1706.03762",
+    "type": "conceptual"
+  },
+  {
+    "query": "Mistral 7B grouped-query attention sliding window Apache 2.0",
+    "target_id": "2310.06825",
+    "type": "keyword"
+  },
+  {
+    "query": "Which 7 billion parameter model uses sliding window attention and outperforms Llama 2 13B?",
+    "target_id": "2310.06825",
+    "type": "semantic"
+  },
+  {
+    "query": "optimizing inference cost and arbitrary sequence length handling in open-weight language models via grouped-query and sliding window attention",
+    "target_id": "2310.06825",
+    "type": "conceptual"
+  },
+  {
+    "query": "chain-of-thought prompting large language models reasoning GSM8K",
+    "target_id": "2201.11903",
+    "type": "keyword"
+  },
+  {
+    "query": "How can providing a few intermediate reasoning steps improve math word problem accuracy in LLMs?",
+    "target_id": "2201.11903",
+    "type": "semantic"
+  },
+  {
+    "query": "eliciting emergent symbolic and commonsense reasoning capabilities in scaled language models through intermediate step demonstration",
+    "target_id": "2201.11903",
+    "type": "conceptual"
+  },
+  {
+    "query": "hallucinations large language models taxonomy detection Cognitive Mirage",
+    "target_id": "2309.06794",
+    "type": "keyword"
+  },
+  {
+    "query": "What are the different types of hallucinations in text generation and how can we detect them?",
+    "target_id": "2309.06794",
+    "type": "semantic"
+  },
+  {
+    "query": "theoretical analyses and comprehensive taxonomy of ungrounded text generation phenomena in artificial intelligence systems",
+    "target_id": "2309.06794",
+    "type": "conceptual"
+  },
+  {
+    "query": "small language models SLM knowledge distillation compression recommendation systems",
+    "target_id": "2502.14305",
+    "type": "keyword"
+  },
+  {
+    "query": "How can structured pruning and quantization help deploy efficient LLMs for recommendation systems?",
+    "target_id": "2502.14305",
+    "type": "semantic"
+  },
+  {
+    "query": "mitigating the computational latency of scaled generative models in industrial predictive platforms via distillation and structured weight reduction",
+    "target_id": "2502.14305",
+    "type": "conceptual"
+  },
+  {
+    "query": "AWQ activation-aware weight quantization edge devices TinyChat",
+    "target_id": "2306.00978",
+    "type": "keyword"
+  },
+  {
+    "query": "How does AWQ use activation statistics to protect salient weights during LLM quantization?",
+    "target_id": "2306.00978",
+    "type": "semantic"
+  },
+  {
+    "query": "mathematically deriving scaling factors for salient weight channels based on activation distributions to avoid hardware-inefficient mixed-precision",
+    "target_id": "2306.00978",
+    "type": "conceptual"
+  },
+  {
+    "query": "QLoRA 4-bit NormalFloat NF4 Low Rank Adapters Guanaco",
+    "target_id": "2305.14314",
+    "type": "keyword"
+  },
+  {
+    "query": "How can I finetune a 65B parameter language model on a single 48GB GPU without losing performance?",
+    "target_id": "2305.14314",
+    "type": "semantic"
+  },
+  {
+    "query": "reducing memory footprint during backpropagation by pushing gradients through a frozen optimally quantized 4-bit base model into low-rank adapters",
+    "target_id": "2305.14314",
+    "type": "conceptual"
+  },
+  {
+    "query": "Faiss library vector database similarity search indexing",
+    "target_id": "2401.08281",
+    "type": "keyword"
+  },
+  {
+    "query": "What library provides tools for efficient vector similarity search, clustering, and compression?",
+    "target_id": "2401.08281",
+    "type": "semantic"
+  },
+  {
+    "query": "evaluating the optimization trade-offs and structural design principles for indexing massive high-dimensional embedding collections",
+    "target_id": "2401.08281",
+    "type": "conceptual"
+  },
+  {
+    "query": "BERT deep bidirectional transformers language understanding GLUE",
+    "target_id": "1810.04805",
+    "type": "keyword"
+  },
+  {
+    "query": "How does jointly conditioning on left and right context improve pre-training for language models?",
+    "target_id": "1810.04805",
+    "type": "semantic"
+  },
+  {
+    "query": "creating task-agnostic state-of-the-art representation models through deep bidirectional pre-training on unlabeled textual context",
+    "target_id": "1810.04805",
+    "type": "conceptual"
+  },
+  {
+    "query": "Vision Transformer ViT image patches classification CNN",
+    "target_id": "2010.11929",
+    "type": "keyword"
+  },
+  {
+    "query": "Can we use a pure transformer architecture on sequences of image patches instead of convolutional networks?",
+    "target_id": "2010.11929",
+    "type": "semantic"
+  },
+  {
+    "query": "dispensing with convolutional inductive biases by treating image patches as sequential tokens for large-scale visual recognition",
+    "target_id": "2010.11929",
+    "type": "conceptual"
+  }
+]
