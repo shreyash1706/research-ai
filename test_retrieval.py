@@ -6,7 +6,7 @@ from qdrant_client.models import VectorParams, Distance, PointStruct
 from tqdm import tqdm
 import os 
 from FlagEmbedding import BGEM3FlagModel 
-from retrieval import hybrid_search
+from retrieval import reranked_search
 import json
 
 def calculate_mrr_and_recall(golden_file_path, k=10):
@@ -28,11 +28,11 @@ def calculate_mrr_and_recall(golden_file_path, k=10):
         
         # ---> CALL YOUR QDRANT SEARCH HERE <---
         # Replace this with your actual function that returns a list of dictionaries
-        results = hybrid_search(query, limit=k) 
+        results = reranked_search(query,final_limit=k)
         
         # Extract just the IDs from the results
         # Adjust 'arxiv_id' based on how your payload is structured
-        retrieved_ids = [res.payload['id'] for res in results.points]
+        retrieved_ids = [res.payload['id'] for res in results]
         # 3. Calculate metrics for this specific query
         rank = 0
         if target_id in retrieved_ids:
