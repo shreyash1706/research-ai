@@ -5,6 +5,7 @@ from qdrant_client.models import VectorParams, Distance, PointStruct
 from tqdm import tqdm
 import os 
 from FlagEmbedding import BGEM3FlagModel,FlagReranker 
+from hyde import generate_hyde_document
 
 pq_path  = "arxiv_filtered_master.parquet"
 
@@ -15,6 +16,7 @@ reranker = FlagReranker('BAAI/bge-reranker-v2-m3', use_fp16=True)
 client = QdrantClient(url='http://localhost:6333')
 
 def reranked_search(user_query, final_limit=5, candidate_limit=50):
+    
     query_output = model.encode(
         [user_query],
         return_dense=True,
