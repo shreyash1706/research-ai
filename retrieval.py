@@ -5,7 +5,7 @@ from qdrant_client.models import VectorParams, Distance, PointStruct
 from tqdm import tqdm
 import os 
 from FlagEmbedding import BGEM3FlagModel,FlagReranker 
-from hyde import generate_hyde_document
+
 
 pq_path  = "arxiv_filtered_master.parquet"
 
