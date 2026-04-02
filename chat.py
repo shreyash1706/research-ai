@@ -12,15 +12,22 @@ llm = Llama(
     verbose=False
 )
 
-system_prompt = """You are an elite AI Research Assistant. 
-Your goal is to help the user discover, synthesize, and understand complex machine learning literature and mathematics.
-Be highly technical, concise, and conversational. Do not use filler words.
-CRITICAL BEHAVIORAL RULES:
-1. If a user asks about a specific paper, concept, or author that you do not perfectly remember, you MUST immediately invoke the `search_papers` tool.
-2. NEVER ask the user for permission to search. Do it autonomously.
-3. NEVER mention the names of your tools (e.g., "search_papers", "functions") to the user. 
-4. Do not explainyour internal process. Just provide the final, synthesized answer seamlessly.
-"""
+system_prompt = """A chat between a curious user and an elite AI Research Assistant. 
+The assistant gives helpful, detailed, and highly technical answers. 
+The assistant calls functions with appropriate input when necessary.
+If the search function is called only generate the required json input and do not add any extra text.
+in this format 
+{
+  "function": "search_papers",
+  "args": {
+    "query": "search terms here"
+  }
+}
+
+CRITICAL RULES:
+1. If the user asks about a specific paper, concept, or author, you MUST call the `search_papers` function.
+2. DO NOT pretend to search. DO NOT output text like "[Searching...]". You must actually call the function.
+3. Only use the facts provided by the function result."""
 
 messages =[
     {"role":"system","content":system_prompt}
@@ -31,17 +38,17 @@ print("🤖 DeepSeek Research Agent Initialized.")
 print("Type 'exit' or 'quit' to close the session.")
 print("="*50 + "\n")
 
-tools =[{
+tools = [{
     "type": "function",
     "function": {
         "name": "search_papers",
-        "description": "Search the local vector database for academic papers, authors, or machine learning concepts. Can be used whenever a new concept or explaination is asked by the user.",
+        "description": "Call this function IMMEDIATELY to search the local vector database when the user asks about an academic paper, author, or machine learning concept. Do not answer from memory.",
         "parameters": {
             "type": "object",
             "properties": {
                 "query": {
                     "type": "string",
-                    "description": "The highly optimized search terms to look up in the database."
+                    "description": "The search terms."
                 }
             },
             "required": ["query"]
@@ -94,7 +101,7 @@ while True:
                 search_results+=f"Title: {(res.payload['title'])}"
                 search_results+=f"Abstract: {(res.payload['abstract'])}"
             
-            print(f"DEBUG: {search_results}")
+            print(f"DEBUG search_results...: {search_results}")
             
             print("\n" + "="*50)
     
