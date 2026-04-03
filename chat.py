@@ -2,10 +2,11 @@ import re
 from retrieval import reranked_search
 import json
 from llama_cpp import Llama
+import time
 
 print("Loading model in memory")
 llm = Llama(
-    model_path="models/DeepSeek-R1-0528-Qwen3-8B-Q5_K_M.gguf",
+    model_path="models/Qwen3.5-9B-Q4_K_M.gguf",
     n_gpu_layers=-1,
     chat_format="chatml-function-calling",
     n_ctx=4096,
@@ -73,10 +74,13 @@ while True:
     
     print("Thinking.....")
     
+    start_time = time.perf_counter()
+    
     response = llm.create_chat_completion(
         messages=messages,
         tools=tools,
-        temperature=0.2
+        temperature=0.2,
+        tool_choice='auto'
     )
     
     response_message = response["choices"][0]["message"]
@@ -130,3 +134,6 @@ while True:
         clean_text = re.sub(r'<think>.*?</think>', '', raw_text, flags=re.DOTALL).strip()
         print(f"🤖 Assistant: {clean_text}\n")
         messages.append({"role": "assistant", "content": raw_text})
+    end_time = time.perf_counter()
+    latency = end_time-start_time
+    print(f"Latency: {latency} secs")

@@ -1,6 +1,6 @@
 from retrieval import reranked_search
 
-results = reranked_search("explain qlora to me")
+results = reranked_search("cognitive mirage")
 
 
 search_results = ""
