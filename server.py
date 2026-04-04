@@ -7,6 +7,7 @@ from fastapi.responses import StreamingResponse
 import uvicorn
 import time
 import json 
+import re
 
 app = FastAPI(title="Research Agent API")
 
@@ -61,13 +62,40 @@ async def chat_endpoint(request: ChatRequest):
                 
                 print("\n" + "="*50)
                 
+                has_tool_call = False
+                func_name = None
+                func_args = {}
+                tool_id = "call_fallback_123"
+
+                raw_content = response_message.get("content", "")
+                
                 if "tool_calls" in response_message and response_message["tool_calls"]:
                         tool_call = response_message["tool_calls"][0]
                         func_name =tool_call["function"]["name"]
                         func_args = json.loads(tool_call["function"]["arguments"])
-                        
+                        tool_id = tool_call.get('id', tool_id)
+                        has_tool_call = True        
                         messages.append(response_message)#TODO: doubtful about this shit
                         
+                elif "<tool_call>" in raw_content:
+                        # Extract the function name: <function=search_papers>
+                        func_match = re.search(r'<function=(.*?)>', raw_content)
+                        # Extract the parameter and its value: <parameter=query> ... </parameter>
+                        param_match = re.search(r'<parameter=(.*?)>(.*?)</parameter>', raw_content, flags =re.DOTALL)
+                        
+                        if func_match and param_match:
+                                func_name = func_match.group(1).strip()
+                                param_name = param_match.group(1).strip()
+                                param_value = param_match.group(2).strip()
+                                
+                                func_args = {param_name: param_value}
+                                has_tool_call = True
+                                
+                                # Append the raw text so the LLM remembers its own formatting
+                                messages.append({"role": "assistant", "content": raw_content})        
+                                        
+                        
+                if has_tool_call:
                         if func_name == "search_papers":
                                 search_query = func_args.get("query")
                                 results = reranked_search(search_query)
@@ -86,7 +114,7 @@ async def chat_endpoint(request: ChatRequest):
                                         "role":"tool",
                                         "name": func_name,
                                         "content": search_results,
-                                        "tool_call_id": tool_call['id']
+                                        "tool_call_id": tool_id
                                 })
                                 
                                 print("✍️ Synthesizing results...", end="\r")
