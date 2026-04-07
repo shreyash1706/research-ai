@@ -54,6 +54,17 @@ class ChatDatabase:
         # Format it exactly how llama-cpp-python expects it!
         return [{"role": row[0], "content": row[1]} for row in self.cursor.fetchall()]
 
+    def get_all_sessions(self):
+        """
+        fetches all sessions for the sidebar"""
+        self.cursor.execute("""
+                            SELECT session_id,created_at 
+                            FROM sessions
+                            ORDER BY created_at DESC
+                            """)        
+
+        return [{"id":row[0], "date":row[1]} for row in self.cursor.fetchall()]
+
 # Quick Test
 if __name__ == "__main__":
     db = ChatDatabase()

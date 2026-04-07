@@ -8,8 +8,10 @@ import uvicorn
 import time
 import json 
 import re
+from database import ChatDatabase
 
 app = FastAPI(title="Research Agent API")
+db = ChatDatabase()
 
 print("Loading Qwen 3.5")
 llm = Llama(
@@ -20,7 +22,7 @@ llm = Llama(
 )
 
 class ChatRequest(BaseModel):
-        messages: List[Dict[str,str]]
+        prompt: str
         
 tools = [{
     "type": "function",
@@ -40,15 +42,33 @@ tools = [{
     }
 }]
 
-@app.post("/chat")
-async def chat_endpoint(request: ChatRequest):
+@app.post("/sessions")
+def create_session():
+        """ New session in the db"""
+        return {"session_id" : db.create_session()}
+
+@app.get("/sessions")
+def get_sessions():
+        return db.get_all_sessions()
+
+@app.get("/chat/{session_id}")
+def get_chat_history(session_id: str):
+        return db.get_history(session_id, limit=50)
+
+@app.post("/chat/{session_id}")
+async def chat_endpoint(session_id: str, request: ChatRequest):
         
+        db.add_message(session_id, "user", request.prompt)
+        
+        history = db.get_history(session_id, limit=10)
         messages = [{
                 "role":"system",
                 "content":"You are an elite AI Research Assistant. Use the search_papers tool when asked about literature."
-        }] + request.messages
+        }] + history 
         
         def agent_generator():
+                
+                full_response = ""
                 
                 response = llm.create_chat_completion(
                 messages=messages,
@@ -120,19 +140,23 @@ async def chat_endpoint(request: ChatRequest):
                                 print("✍️ Synthesizing results...", end="\r")
                                 final_stream = llm.create_chat_completion(
                                         messages=messages,
-                                        max_tokens=800,
                                         temperature=0.3,
                                         stream=True
                                 )
                                 for chunk in final_stream:
                                         if "content" in chunk["choices"][0]["delta"]:
-                                                yield chunk["choices"][0]["delta"]["content"]
+                                                text_chunk =  chunk["choices"][0]["delta"]["content"]
+                                                full_response += text_chunk
+                                                yield text_chunk
                         
                 else:
-                        raw_text = response_message.get("content", "")
-                # Chunk it up artificially so the UI still looks like it's streaming naturally
-                        for word in raw_text.split(" "):
+                        full_response = raw_content
+                        for word in raw_content.split(" "):
                                 yield word + " "
+                                
+                                
+                clean_repsonse = re.sub("r<think>.*?</think>",'',full_response, flags=re.DOTALL).strip()
+                db.add_message(session_id, "assistant", clean_repsonse)
         # end_time = time.perf_counter()
         # latency = end_time-start_time
         # print(f"Latency: {latency} secs")
